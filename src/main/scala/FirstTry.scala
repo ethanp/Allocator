@@ -8,10 +8,9 @@ object A extends App {
 
 trait Semester {
   val inmateNames: Vector[String]
-  val numInmates = inmateNames.length  // remove this if it doesn't get used
   val numJobs: Int
   val maxVotes: Int
-  val inmates: Vector[Person] = inmateNames map Person
+  lazy val inmates: Vector[Person] = inmateNames map Person // lazy bc base hasn't been set yet
 
   case class Preference(cost: Int)
 
@@ -30,3 +29,6 @@ trait Semester {
   // etc.
 }
 
+trait Solver extends Semester {
+  // TODO
+}
